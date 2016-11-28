@@ -1,0 +1,14 @@
+{% extends "SpecManApp/base.html" %}
+
+{% block body_block %}
+<!--Bootstrap Signin Style -->
+<link  href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+<form class = "form-signin" role = "form" method ="post" action ="."
+<h1>SKA SA Spectrum Management Portal : Login  </h1>
+
+<input class ="form-control" placeholder ="Username" id="id_username" maxlength ="254" name ="username" type ="text" required autofocus="" />
+<input type="password" class ="form-control" placeholder = "Password" id="id_password" name="password" required />
+         <button class="btn btn-lg btn-primary btn-block" type ="submit" value ="Submit" > Log In </button>
+                </form>
+
+{% endblock %}

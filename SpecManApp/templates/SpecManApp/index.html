@@ -1,0 +1,29 @@
+{% extends 'SpecManApp/base.html' %}
+{% load staticfiles %}
+
+<!--<html>
+	<head>
+		<title> SKA SA Spectrum Management Portal</title>
+		<link rel = "stylesheet" href ="{% static "css/base.css" %}" />
+	</head>
+	
+	<body>
+	    <a href="/SpecManApp/About">About</a><br /> -->
+{% block title %} Index {% endblock %}	
+          {% block  body_block %}    
+{% if user.is_authenticated %}
+    <div class ="page-header" >
+		
+		         <h1>Welcome to the SKA SA Spectrum Management Portal {{user.username}}!</h1>
+		         <a href="/SpecManApp/logout/">Logout</a><br />
+		         <img src ="{% static "images/MEERKAT.jpg" %}" alt ="Picture of the MEERKAT Antenna" />
+		{% else %}
+		        <h1>Register  an account to view the Portal and Login</h1>
+		        <a href="/SpecManApp/register">Register Here</a> <br />
+		        <a href="/SpecManApp/login/">Login</a> <br />
+		        <img src ="{% static "images/MEERKAT.jpg" %}" alt ="Picture of the MEERKAT Antenna" />
+		{% endif %}
+		
+     </div>
+		
+{% endblock %}

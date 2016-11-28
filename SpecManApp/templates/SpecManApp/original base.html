@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> SKA Spectrum Management Portal </title>
+
+</head>
+ <body>
+	<div>
+		{% block body_block %} {% endblock %}
+	</div>
+	<hr />
+	<div>
+	<ul>
+	{% if user.is_authenticated %}
+		<li><a href="/SpecManApp/restricted/">Restricted Page</a></li>
+		<li><a href="{% url 'auth_logout' %}"?next="/SpecManApp/">Logout</a></li>
+		<!-- <li><a href=""</li> -->
+	{% else %}
+		<li><a href ="{% url 'registration_register' %}">Register Here </a></li>
+		<li><a href ="{% url 'auth_login' %}"> Login</a></li>
+	{% endif %}
+	  
+		 
+		 
+		 
+	
+	
+	</ul>
+	<!-- Page Specific Content => Here -->
+	</div>
+	
+
+
+ </body>
+
+</html>

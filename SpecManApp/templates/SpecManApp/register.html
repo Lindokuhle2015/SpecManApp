@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SKA SA Spectrum Management Portal</title>
+    </head>
+
+    <body>
+        <h1>Registration Page</h1>
+
+        {% if registered %}
+        <strong>Thank you for registering!</strong>
+        <a href="/SpecManApp/">Return to the homepage.</a><br />
+        {% else %}
+        <strong>Register here!</strong><br />
+
+        <form id="user_form" method="post" action="/SpecManApp/register/"
+                enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+
+            <!-- Button . -->
+            <input type="submit" name="submit" value="Register" />
+        </form>
+        {% endif %}
+    </body>
+</html>
